@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Footstep Power Generation",
+    "description": "Generates energy using piezo sensors. Displays voltage on LCD.",
+    "icon": "https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-footstep-energy-flatart-icons-outline-flatarticons.png"
+  },
+  {
+    "title": "Color Detection for Blind",
+    "description": "Uses TCS3200 sensor to detect and announce color via Arduino.",
+    "icon": "https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/color-sensor.png"
+  },
+  {
+    "title": "Single Phase Fault Detector",
+    "description": "Detects faults in single phase supply using Arduino Nano and GSM.",
+    "icon": "https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/voltage-meter-flatart-icons-outline-flatarticons.png"
+  }
+]

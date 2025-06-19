@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RN Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-gradient-to-r from-blue-700 to-green-500 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center text-white">
+      <h1 class="text-3xl font-extrabold">RN Projects</h1>
+      <nav class="space-x-6 font-semibold">
+        <a href="#home" class="hover:text-yellow-300">Home</a>
+        <a href="#projects" class="hover:text-yellow-300">Projects</a>
+        <a href="#gallery" class="hover:text-yellow-300">Gallery</a>
+        <a href="#about" class="hover:text-yellow-300">About</a>
+        <a href="#contact" class="hover:text-yellow-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="text-center py-20 bg-blue-100">
+    <h2 class="text-5xl font-bold text-blue-700 mb-4">Welcome to RN Projects</h2>
+    <p class="text-xl max-w-xl mx-auto">Turning Electrical & Arduino Ideas into Reality. Explore cutting-edge innovations built for students, by students.</p>
+  </section>
+
+  <!-- Project Section -->
+  <section id="projects" class="py-16 px-6 max-w-7xl mx-auto">
+    <h3 class="text-4xl font-semibold text-center mb-10">Featured Projects</h3>
+    <div id="project-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"></div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 bg-gray-50 px-6">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-4xl font-semibold text-center mb-10">Project Gallery</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="https://source.unsplash.com/400x300/?arduino" class="rounded-lg shadow" alt="Arduino">
+        <img src="https://source.unsplash.com/400x300/?electronics" class="rounded-lg shadow" alt="Electronics">
+        <img src="https://source.unsplash.com/400x300/?innovation" class="rounded-lg shadow" alt="Innovation">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-6 bg-blue-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-4xl font-semibold mb-6">About RN Projects</h3>
+      <p class="text-lg">RN Projects is a student-led initiative by Rushikesh Nanavare to provide ready-made as well as custom-engineered solutions for students in Electrical and Electronics domains. We focus on innovative, low-cost, and technically rich projects using Arduino and other microcontroller platforms.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-4xl font-semibold text-center mb-6">Contact Us</h3>
+      <p class="text-center mb-2">📧 Email: rushikeshnanavare51078@gmail.com</p>
+      <p class="text-center">📱 WhatsApp: <a href="https://wa.me/918421785170" class="text-blue-600 hover:underline">+91 8421785170</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    <p class="text-sm">© 2025 RN Projects | Crafted with ❤️ by Rushikesh Nanavare</p>
+  </footer>
+
+  <!-- Script to load projects -->
+  <script>
+    fetch('projects.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = document.getElementById('project-list');
+        data.forEach(project => {
+          const card = document.createElement('div');
+          card.className = 'bg-white p-6 rounded-lg shadow text-center hover:shadow-xl transition';
+          card.innerHTML = \`
+            <img src="\${project.icon}" alt="\${project.title} icon" class="mx-auto mb-4 w-16 h-16">
+            <h4 class="text-xl font-semibold text-blue-700">\${project.title}</h4>
+            <p class="mt-2 text-sm text-gray-600">\${project.description}</p>
+          \`;
+          list.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
